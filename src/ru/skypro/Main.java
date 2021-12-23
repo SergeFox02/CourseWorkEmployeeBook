@@ -47,6 +47,10 @@ public class Main {
     }
 
     public static int minSalaryEmployee(Employee[] employee) {
+        if (employee == null) {
+            System.out.println("Список работников пуст! Невозможно вычислить минимальную зарплату!");
+            return 0;
+        }
         int minSalary = employee[0].getSalary();
         int indexEmployee = 0;
         for (int i = 1; i < employee.length; i++) {
@@ -60,6 +64,10 @@ public class Main {
     }
 
     public static int maxSalaryEmployee(Employee[] employee) {
+        if (employee == null) {
+            System.out.println("Список работников пуст! Невозможно вычислить максимальную зарплату!");
+            return 0;
+        }
         int maxSalary = employee[0].getSalary();
         int indexEmployee = 0;
         for (int i = 1; i < employee.length; i++) {
@@ -73,6 +81,10 @@ public class Main {
     }
 
     public static float mediumSalaryEmployee(Employee[] employee) {
+        if (employee == null) {
+            System.out.println("Список работников пуст! Невозможно вычислить среднюю зарплату!");
+            return 0;
+        }
         int numberEmployee = 0;
         for (int i = 0; i < employee.length; i++) {
             if (employee[i] != null){
@@ -88,8 +100,14 @@ public class Main {
         System.out.println("Список всех сотрудников Ф.И.Ф:");
         for (int i = 0; i < employee.length; i++) {
             if (employee[i] != null) {
-                System.out.println(employee[i].getMiddleName() + " " + employee[i].getFirstName() + " " + employee[i].getLastName());
+                printNameEmployee(employee[i]);
             }
+        }
+    }
+
+    public static void printNameEmployee(Employee employee) {
+        if (employee != null) {
+            System.out.println(employee.getMiddleName() + " " + employee.getFirstName() + " " + employee.getLastName());
         }
     }
 }
